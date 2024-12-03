@@ -19,8 +19,14 @@ class TransaksiDetail extends Model
         'subtotal',
     ];
 
+    protected $casts = [
+        'harga_satuan' => 'integer',
+        'jumlah' => 'integer',
+        'subtotal' => 'integer',
+    ];
+
     public function transaksi()
     {
-        return $this-belongsTo(Transaksi::class, 'id_transaksi', 'id');
+        return $this->belongsTo(Transaksi::class, 'id_transaksi', 'id');
     }
 }
